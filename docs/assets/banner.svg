@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 360" role="img" aria-label="SENTINEL — AI code auditor">
+  <defs>
+    <radialGradient id="bg" cx="70%" cy="20%" r="90%">
+      <stop offset="0" stop-color="#16294d"/>
+      <stop offset="0.55" stop-color="#0a1020"/>
+      <stop offset="1" stop-color="#060914"/>
+    </radialGradient>
+    <radialGradient id="core" cx="50%" cy="50%" r="50%">
+      <stop offset="0" stop-color="#9275ff" stop-opacity="0.55"/>
+      <stop offset="1" stop-color="#9275ff" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="title" x1="0" x2="1">
+      <stop offset="0" stop-color="#f4f7ff"/>
+      <stop offset="1" stop-color="#a8b5cc"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="360" fill="url(#bg)"/>
+
+  <!-- stars -->
+  <g fill="#f4f7ff">
+    <circle cx="90" cy="60" r="1.2"><animate attributeName="opacity" values="0.2;1;0.2" dur="3.2s" repeatCount="indefinite"/></circle>
+    <circle cx="260" cy="300" r="1"><animate attributeName="opacity" values="1;0.2;1" dur="4s" repeatCount="indefinite"/></circle>
+    <circle cx="430" cy="40" r="1.4"><animate attributeName="opacity" values="0.3;1;0.3" dur="2.6s" repeatCount="indefinite"/></circle>
+    <circle cx="600" cy="320" r="1"><animate attributeName="opacity" values="0.2;0.9;0.2" dur="3.6s" repeatCount="indefinite"/></circle>
+    <circle cx="760" cy="70" r="1.2"><animate attributeName="opacity" values="1;0.2;1" dur="3s" repeatCount="indefinite"/></circle>
+    <circle cx="1130" cy="40" r="1.4"><animate attributeName="opacity" values="0.2;1;0.2" dur="4.4s" repeatCount="indefinite"/></circle>
+    <circle cx="1160" cy="310" r="1"><animate attributeName="opacity" values="0.4;1;0.4" dur="2.8s" repeatCount="indefinite"/></circle>
+    <circle cx="40" cy="200" r="1"><animate attributeName="opacity" values="1;0.3;1" dur="3.9s" repeatCount="indefinite"/></circle>
+  </g>
+
+  <!-- orbit system -->
+  <g transform="translate(930 180)">
+    <circle r="120" fill="url(#core)"/>
+    <ellipse rx="150" ry="62" fill="none" stroke="#559dff" stroke-opacity="0.35" stroke-dasharray="3 6"/>
+    <ellipse rx="105" ry="44" fill="none" stroke="#42d8e7" stroke-opacity="0.3" stroke-dasharray="3 6"/>
+    <ellipse rx="190" ry="84" fill="none" stroke="#9275ff" stroke-opacity="0.25" stroke-dasharray="3 6"/>
+    <polygon points="0,-34 30,-17 30,17 0,34 -30,17 -30,-17" fill="#10192a" stroke="#9275ff" stroke-width="2"/>
+    <polygon points="0,-16 14,-8 14,8 0,16 -14,8 -14,-8" fill="#9275ff" fill-opacity="0.8">
+      <animate attributeName="fill-opacity" values="0.5;1;0.5" dur="2.4s" repeatCount="indefinite"/>
+    </polygon>
+    <g>
+      <circle r="7" fill="#ff526b" cx="150" cy="0"/>
+      <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="14s" repeatCount="indefinite"/>
+    </g>
+    <g>
+      <circle r="6" fill="#42d8e7" cx="105" cy="0"/>
+      <animateTransform attributeName="transform" type="rotate" from="360" to="0" dur="10s" repeatCount="indefinite"/>
+    </g>
+    <g>
+      <circle r="6" fill="#4cd5ad" cx="190" cy="0"/>
+      <animateTransform attributeName="transform" type="rotate" from="120" to="480" dur="20s" repeatCount="indefinite"/>
+    </g>
+  </g>
+
+  <!-- title -->
+  <g font-family="Segoe UI, Helvetica, Arial, sans-serif">
+    <text x="70" y="160" font-size="84" font-weight="700" letter-spacing="6" fill="url(#title)">SENTINEL
+      <animate attributeName="opacity" from="0" to="1" dur="1.2s" fill="freeze"/>
+    </text>
+    <text x="74" y="208" font-size="26" fill="#a8b5cc">See what is hiding inside your code.
+      <animate attributeName="opacity" from="0" to="1" begin="0.6s" dur="1.2s" fill="freeze"/>
+    </text>
+    <g font-size="16" fill="#75839c">
+      <text x="74" y="258">Bandit · Semgrep · Gitleaks · OSV-Scanner · evidence-checked AI
+        <animate attributeName="opacity" from="0" to="1" begin="1.2s" dur="1.2s" fill="freeze"/>
+      </text>
+    </g>
+    <rect x="74" y="280" width="120" height="3" rx="1.5" fill="#9275ff">
+      <animate attributeName="width" values="0;120;330;120" dur="6s" repeatCount="indefinite"/>
+    </rect>
+  </g>
+</svg>

@@ -1,0 +1,10 @@
+/* Tailwind theme + utilities only. Preflight is omitted on purpose: the app's own base styles stay authoritative. */
+@import "tailwindcss/theme.css" layer(theme);
+@import "tailwindcss/utilities.css" layer(utilities);
+
+@theme {
+  --color-bg: #090b10; --color-sidebar: #0d1018; --color-card: #111827; --color-elev: #172033; --color-line: #222a3b;
+  --color-violet: #8b7cff; --color-blue: #5c9dff; --color-cyan: #53c8d8; --color-verified: #53c7a4;
+  --color-critical: #f05b70; --color-high: #f29b58; --color-medium: #e9c46a; --color-low: #73a7ff;
+  --color-ink: #f3f5fa; --color-soft: #9299ab; --color-faint: #68738a;
+}

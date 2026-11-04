@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 190" role="img" aria-label="SENTINEL scan pipeline: clone, scan, verify, explain, investigate">
+  <rect width="1200" height="190" rx="16" fill="#0a1020"/>
+  <g font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="middle">
+    <!-- connecting line -->
+    <line x1="130" y1="80" x2="1070" y2="80" stroke="#1c2a42" stroke-width="3"/>
+    <line x1="130" y1="80" x2="1070" y2="80" stroke="#559dff" stroke-width="3" stroke-dasharray="14 22">
+      <animate attributeName="stroke-dashoffset" from="0" to="-72" dur="2s" repeatCount="indefinite"/>
+    </line>
+
+    <g>
+      <circle cx="130" cy="80" r="30" fill="#10192a" stroke="#75839c" stroke-width="2"/>
+      <text x="130" y="88" font-size="22" fill="#f4f7ff">1</text>
+      <text x="130" y="135" font-size="17" font-weight="600" fill="#f4f7ff">Clone</text>
+      <text x="130" y="157" font-size="13" fill="#75839c">public repo, read-only</text>
+    </g>
+    <g>
+      <circle cx="365" cy="80" r="30" fill="#10192a" stroke="#559dff" stroke-width="2"/>
+      <text x="365" y="88" font-size="22" fill="#f4f7ff">2</text>
+      <text x="365" y="135" font-size="17" font-weight="600" fill="#f4f7ff">Scan</text>
+      <text x="365" y="157" font-size="13" fill="#75839c">4 scanners, never runs code</text>
+    </g>
+    <g>
+      <circle cx="600" cy="80" r="30" fill="#10192a" stroke="#4cd5ad" stroke-width="2"/>
+      <text x="600" y="88" font-size="22" fill="#f4f7ff">3</text>
+      <text x="600" y="135" font-size="17" font-weight="600" fill="#f4f7ff">Explain</text>
+      <text x="600" y="157" font-size="13" fill="#75839c">AI summary per finding</text>
+    </g>
+    <g>
+      <circle cx="835" cy="80" r="30" fill="#10192a" stroke="#9275ff" stroke-width="2"/>
+      <text x="835" y="88" font-size="22" fill="#f4f7ff">4</text>
+      <text x="835" y="135" font-size="17" font-weight="600" fill="#f4f7ff">Verify</text>
+      <text x="835" y="157" font-size="13" fill="#75839c">claims checked vs evidence</text>
+    </g>
+    <g>
+      <circle cx="1070" cy="80" r="30" fill="#10192a" stroke="#42d8e7" stroke-width="2"/>
+      <text x="1070" y="88" font-size="22" fill="#f4f7ff">5</text>
+      <text x="1070" y="135" font-size="17" font-weight="600" fill="#f4f7ff">Investigate</text>
+      <text x="1070" y="157" font-size="13" fill="#75839c">evidence graph + code</text>
+    </g>
+    <circle r="6" fill="#42d8e7">
+      <animate attributeName="cx" values="130;365;600;835;1070;130" dur="10s" repeatCount="indefinite"/>
+      <animate attributeName="cy" values="80" dur="10s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+</svg>
