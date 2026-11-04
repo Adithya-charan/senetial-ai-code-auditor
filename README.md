@@ -127,6 +127,28 @@ cd backend
 pytest
 ```
 
+## Deployment
+
+SENTINEL deploys as two parts: the React app on **Vercel** and the API on **Render**, with the database on Neon.
+
+### 1. Backend on Render
+
+1. In Render choose **New → Blueprint** and select this repository. `render.yaml` defines the `sentinel-api` Docker service (`backend/Dockerfile`), which installs `git`, Gitleaks and OSV-Scanner, and runs `alembic upgrade head` before starting the API.
+2. Set the secret variables when prompted: `DATABASE_URL`, `DATABASE_URL_UNPOOLED`, and optionally `GROQ_API_KEY`.
+3. Leave `CORS_ORIGINS` for step 3 below. Copy the service URL, for example `https://sentinel-api.onrender.com`.
+
+Semgrep needs more memory than Render's free instance has, so the Blueprint uses the `starter` plan.
+
+### 2. Frontend on Vercel
+
+1. In Vercel choose **Add New → Project**, import the repository and set **Root Directory** to `frontend`. Vercel detects Vite; `vercel.json` adds the single-page-app rewrite.
+2. Add the environment variable `VITE_API_URL` set to the Render URL, with no trailing path.
+3. Deploy, then copy the Vercel URL.
+
+### 3. Connect them
+
+Set `CORS_ORIGINS` on Render to your Vercel URL (comma-separate several, no trailing slash) and redeploy the API. Then open the Vercel site; the status line should read "Backend connected".
+
 ## API
 
 | Method | Endpoint | Description |

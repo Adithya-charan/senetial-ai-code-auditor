@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: sentinel-api
+    runtime: docker
+    rootDir: backend
+    dockerfilePath: ./Dockerfile
+    plan: starter            # semgrep needs more than the 512 MB free tier offers
+    healthCheckPath: /api/health
+    envVars:
+      - key: DATABASE_URL
+        sync: false          # Neon pooled connection string
+      - key: DATABASE_URL_UNPOOLED
+        sync: false          # Neon direct connection string, used for migrations
+      - key: GROQ_API_KEY
+        sync: false          # optional
+      - key: GROQ_MODEL
+        value: openai/gpt-oss-120b
+      - key: CORS_ORIGINS
+        sync: false          # your Vercel URL, e.g. https://sentinel.vercel.app
