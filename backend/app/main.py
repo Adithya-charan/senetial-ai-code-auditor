@@ -12,7 +12,7 @@ from .db import get_db
 from .models import Finding, Scan
 
 app = FastAPI(title="SENTINEL")
-app.add_middleware(CORSMiddleware, allow_origins=settings.cors_origins.split(","),
+app.add_middleware(CORSMiddleware, allow_origins=[o.strip().rstrip("/") for o in settings.cors_origins.split(",") if o.strip()],
                    allow_methods=["GET", "POST"], allow_headers=["content-type"])
 
 
