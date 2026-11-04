@@ -86,7 +86,7 @@ React 19 + Vite  ──►  FastAPI  ──►  Scanners (Bandit · Semgrep · G
 - Python 3.11+ and Node.js 20+
 - A PostgreSQL database (a free [Neon](https://neon.tech) project works well)
 - Optional: a [Groq](https://groq.com) API key for AI explanations
-- Optional: `gitleaks` and `osv-scanner` on your `PATH` (Bandit and Semgrep install with `pip`). A missing scanner is reported as unavailable instead of failing the scan.
+- Optional: `gitleaks` and `osv-scanner` on your `PATH` (Bandit is in `requirements.txt`; install Semgrep separately with `pipx install semgrep`, because its dependencies conflict with FastAPI's). A missing scanner is reported as unavailable instead of failing the scan.
 
 ### 1. Backend
 

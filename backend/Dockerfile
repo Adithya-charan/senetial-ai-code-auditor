@@ -14,6 +14,10 @@ RUN curl -fsSL "https://github.com/gitleaks/gitleaks/releases/download/v${GITLEA
       "https://github.com/google/osv-scanner/releases/download/v${OSV_SCANNER_VERSION}/osv-scanner_linux_amd64" \
  && chmod +x /usr/local/bin/osv-scanner
 
+# Semgrep pins older OpenTelemetry versions than FastAPI needs, so it gets its own virtualenv.
+ARG SEMGREP_VERSION=1.183.0
+RUN python -m venv /opt/semgrep  && /opt/semgrep/bin/pip install --no-cache-dir "semgrep==${SEMGREP_VERSION}"  && ln -s /opt/semgrep/bin/semgrep /usr/local/bin/semgrep
+
 WORKDIR /app
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
